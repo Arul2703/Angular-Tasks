@@ -1,0 +1,45 @@
+
+<div style="background-color: antiquewhite;">
+  <form [formGroup]="hotelBookingForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="roomType">Room/Suite Type:</label>
+      <input type="text" id="roomType" formControlName="roomType">
+      <div *ngIf="hotelBookingForm.get('roomType')?.invalid && (hotelBookingForm.get('roomType')?.dirty || hotelBookingForm.get('roomType')?.touched)">
+        <span class="error">Room Type is required</span>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="numberOfRooms">Number of Rooms/Suites:</label>
+      <input type="number" id="numberOfRooms" formControlName="numberOfRooms">
+      <div *ngIf="hotelBookingForm.get('numberOfRooms')?.invalid && (hotelBookingForm.get('numberOfRooms')?.dirty || hotelBookingForm.get('numberOfRooms')?.touched)">
+        <span class="error">Number of Rooms/Suites is required</span>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="numberOfPersons">Number of Persons:</label>
+      <input type="number" id="numberOfPersons" formControlName="numberOfPersons">
+      <div *ngIf="hotelBookingForm.get('numberOfPersons')?.invalid && (hotelBookingForm.get('numberOfPersons')?.dirty || hotelBookingForm.get('numberOfPersons')?.touched)">
+        <span class="error">Number of Persons is required</span>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="numberOfChildren">Number of Children:</label>
+      <input type="number" id="numberOfChildren" formControlName="numberOfChildren">
+    </div>
+  
+    <div class="form-group">
+      <label for="restaurantFacilities">Restaurant Facilities:</label>
+      <input type="text" id="restaurantFacilities" formControlName="restaurantFacilities">
+    </div>
+  
+    <!-- Display total cost in a separate div -->
+    <div class="total-cost" *ngIf="hotelBookingForm.valid">
+      <h3>Total Cost:</h3>
+      <p>{{ calculateTotalCost() | currency : 'INR' }}</p>
+    </div>
+  
+  </form>
+</div>

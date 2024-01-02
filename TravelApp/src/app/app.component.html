@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="left-section">
+    <h2>Booking Options</h2>
+    <ul>
+      <li><a routerLink="/flight-booking">Flight Booking</a></li>
+      <li><a routerLink="/bus-booking">Bus Booking</a></li>
+      <li><a routerLink="/car-booking">Car Booking</a></li>
+      <li><a (click)="showHotelBookingForm()">Hotel Booking</a></li>
+    </ul>
+  </div>
+  <div class="center-section">
+    <div class="hotel-booking-form" *ngIf="displayHotelBookingForm">
+      <app-hotel-booking></app-hotel-booking>
+    </div>
+  </div>
+  <div class="right-section">
+    <h2>Where? When? Transport?</h2>
+    <!-- Content for Where? When? Transport? -->
+  </div>
+</div>

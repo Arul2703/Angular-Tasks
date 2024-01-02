@@ -1,0 +1,29 @@
+.employee-table {
+  margin-top: 20px;
+}
+
+.title{
+  text-align: center;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: yellow;
+}
+
+td{
+  background-color: rgb(77, 241, 77);
+}
+
+button {
+  margin-bottom: 10px;
+}

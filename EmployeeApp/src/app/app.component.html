@@ -1,0 +1,35 @@
+<!-- employee-details.component.html -->
+
+<h2 class="title">Employee Details</h2>
+
+
+<div class="employee-table">
+  <table>
+    <thead>
+      <tr>
+        <th>EMP Id</th>
+        <th>EMP Name</th>
+        <th>Designation</th>
+        <th>Location</th>
+        <th>Address</th>
+        <th *ngIf="showSalary">Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.designation }}</td>
+        <td>{{ employee.location }}</td>
+        <td>{{ employee.address }}</td>
+        <td *ngIf="showSalary">{{ employee.salary | currency : 'INR'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <button (click)="toggleSalaryVisibility()">
+    {{ showSalary ? 'Hide' : 'Show' }} Salary
+  </button>
+</div>
